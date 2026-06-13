@@ -1,4 +1,4 @@
-import { Droplets, Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Droplets, Camera, Globe, Send, Mail, Phone, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -18,7 +18,7 @@ export function Footer() {
               Premium mobile car wash & detailing. Showroom shine, delivered to your driveway.
             </p>
             <div className="mt-6 flex gap-3">
-              {[Instagram, Facebook, Twitter].map((Icon, i) => (
+              {[Camera, Globe, Send].map((Icon, i) => (
                 <a key={i} href="#" className="grid h-9 w-9 place-items-center rounded-full border border-border transition-colors hover:bg-secondary">
                   <Icon className="h-4 w-4" />
                 </a>
