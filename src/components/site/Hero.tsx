@@ -28,122 +28,112 @@ export function Hero() {
   };
 
   return (
-    <section ref={ref} className="relative min-h-screen overflow-hidden bg-gradient-hero pt-32">
+    <section ref={ref} className="relative min-h-screen overflow-hidden bg-gradient-hero pt-36 noise">
       {/* 3D WebGL scene background */}
-      <div className="pointer-events-none absolute inset-0 opacity-70">
+      <div className="pointer-events-none absolute inset-0 opacity-60">
         <Scene3D />
       </div>
 
       {/* animated grid */}
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-[0.18]"
         style={{
           backgroundImage:
-            "linear-gradient(oklch(0.82 0.18 210 / 0.15) 1px, transparent 1px), linear-gradient(90deg, oklch(0.82 0.18 210 / 0.15) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
+            "linear-gradient(oklch(0.82 0.18 210 / 0.18) 1px, transparent 1px), linear-gradient(90deg, oklch(0.82 0.18 210 / 0.18) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+          maskImage: "radial-gradient(ellipse at center, black 25%, transparent 70%)",
         }}
       />
 
-      {/* floating bubbles */}
-      {Array.from({ length: 12 }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full bg-aqua/20 blur-sm"
-          style={{
-            width: 8 + (i % 4) * 6,
-            height: 8 + (i % 4) * 6,
-            left: `${(i * 73) % 100}%`,
-            top: `${(i * 41) % 100}%`,
-          }}
-          animate={{
-            y: [0, -40, 0],
-            opacity: [0.3, 0.8, 0.3],
-          }}
-          transition={{ duration: 4 + (i % 3), repeat: Infinity, delay: i * 0.3 }}
-        />
-      ))}
+      {/* glow accents */}
+      <div className="pointer-events-none absolute -top-20 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-aqua/10 blur-[120px]" />
 
-      <motion.div style={{ opacity }} className="relative z-10 mx-auto max-w-7xl px-6 pb-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+      <motion.div style={{ opacity }} className="relative z-10 mx-auto max-w-7xl px-6 pb-24">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_1fr]">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-xs text-muted-foreground backdrop-blur"
+              className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.02] px-3.5 py-1.5 text-[11px] backdrop-blur"
             >
-              <Sparkles className="h-3.5 w-3.5 text-aqua" />
-              Premium Detailing • Eco-Friendly • Doorstep Service
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-aqua opacity-75" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-aqua" />
+              </span>
+              <span className="font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                Booking open · 60 min ETA
+              </span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl font-black leading-[0.95] sm:text-6xl lg:text-7xl"
+              className="text-[3.25rem] font-medium leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-[5.25rem]"
             >
-              Your car deserves
+              The detail
               <br />
-              <span className="text-gradient-aqua">a showroom</span>
+              your car has been
               <br />
-              <span className="text-gradient-chrome">finish.</span>
+              <span className="italic text-gradient-aqua">waiting for.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="mt-6 max-w-lg text-lg text-muted-foreground"
+              className="mt-7 max-w-md text-[15px] leading-relaxed text-muted-foreground"
             >
-              Touchless wash, ceramic coating, and full interior detailing — performed by trained pros, delivered at your doorstep in under 60 minutes.
+              Touchless wash, ceramic coating, and concours-level interior detailing — performed
+              by certified technicians, delivered at your doorstep.
             </motion.p>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="mt-8 flex flex-wrap items-center gap-4"
+              className="mt-9 flex flex-wrap items-center gap-3"
             >
               <a
                 href="#book"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-aqua px-7 py-3.5 font-semibold text-primary-foreground glow-aqua transition-transform hover:scale-105"
+                className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-[13px] font-semibold text-background transition-all hover:bg-aqua hover:text-primary-foreground hover:shadow-[0_0_40px_-5px_var(--aqua-glow)]"
               >
-                Book a Wash
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                Book a wash
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="#packages"
-                className="rounded-full border border-border bg-secondary/50 px-7 py-3.5 font-semibold backdrop-blur transition-colors hover:bg-secondary"
+                className="rounded-full border border-white/[0.08] bg-white/[0.02] px-6 py-3 text-[13px] font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/[0.06]"
               >
-                See Packages
+                View packages
               </a>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="mt-10 flex items-center gap-6"
+              transition={{ delay: 0.8 }}
+              className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-white/[0.06] pt-6"
             >
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="h-9 w-9 rounded-full border-2 border-background bg-gradient-aqua"
-                    style={{ background: `linear-gradient(${i * 90}deg, oklch(0.82 0.18 210), oklch(0.6 0.2 250))` }}
-                  />
-                ))}
+              <div>
+                <div className="font-display text-2xl font-medium tracking-tight">12K+</div>
+                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Cars detailed</div>
               </div>
               <div>
-                <div className="flex items-center gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="h-4 w-4 fill-aqua text-aqua" />
-                  ))}
+                <div className="flex items-center gap-1">
+                  <span className="font-display text-2xl font-medium tracking-tight">4.9</span>
+                  <Star className="h-3.5 w-3.5 fill-aqua text-aqua" />
                 </div>
-                <p className="text-xs text-muted-foreground">12,000+ happy drivers</p>
+                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Avg rating</div>
+              </div>
+              <div>
+                <div className="font-display text-2xl font-medium tracking-tight">45<span className="text-muted-foreground text-base">min</span></div>
+                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Turnaround</div>
               </div>
             </motion.div>
+
           </div>
 
           {/* 3D Hero image with mouse-tilt */}
