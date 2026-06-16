@@ -18,7 +18,7 @@ export function FAQ() {
       <div className="mx-auto max-w-3xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center"
         >
@@ -35,7 +35,7 @@ export function FAQ() {
               type="button"
               onClick={() => setOpen(open === i ? null : i)}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
               className="glass-card flex w-full flex-col rounded-2xl p-6 text-left transition-colors hover:bg-secondary/30"
