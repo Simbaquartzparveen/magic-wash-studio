@@ -1,191 +1,187 @@
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Sparkles, Star } from "lucide-react";
+import { ArrowUpRight, Star } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
-import { Scene3D } from "./Scene3D";
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
-  // mouse-tracking 3D tilt for the hero card
-  const rotateX = useSpring(useMotionValue(0), { stiffness: 100, damping: 15 });
-  const rotateY = useSpring(useMotionValue(0), { stiffness: 100, damping: 15 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width - 0.5;
-    const py = (e.clientY - rect.top) / rect.height - 0.5;
-    rotateY.set(px * 20);
-    rotateX.set(-py * 20);
-  };
-  const handleMouseLeave = () => {
-    rotateX.set(0);
-    rotateY.set(0);
-  };
+  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
 
   return (
-    <section ref={ref} className="relative min-h-screen overflow-hidden bg-gradient-hero pt-36 noise">
-      {/* 3D WebGL scene background */}
-      <div className="pointer-events-none absolute inset-0 opacity-60">
-        <Scene3D />
-      </div>
-
-      {/* animated grid */}
+    <section
+      ref={ref}
+      className="relative min-h-screen overflow-hidden bg-gradient-hero pt-32 noise"
+    >
+      {/* faint grid — printed-paper feel, not neon */}
       <div
-        className="absolute inset-0 opacity-[0.18]"
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            "linear-gradient(oklch(0.82 0.18 210 / 0.18) 1px, transparent 1px), linear-gradient(90deg, oklch(0.82 0.18 210 / 0.18) 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-          maskImage: "radial-gradient(ellipse at center, black 25%, transparent 70%)",
+            "linear-gradient(oklch(0.86 0.08 85 / 0.5) 1px, transparent 1px), linear-gradient(90deg, oklch(0.86 0.08 85 / 0.5) 1px, transparent 1px)",
+          backgroundSize: "96px 96px",
+          maskImage: "linear-gradient(180deg, black 0%, transparent 70%)",
         }}
       />
 
-      {/* glow accents */}
-      <div className="pointer-events-none absolute -top-20 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-aqua/10 blur-[120px]" />
+      {/* gold corner accent — editorial cover trick */}
+      <div className="pointer-events-none absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full bg-gold/10 blur-[100px]" />
 
-      <motion.div style={{ opacity }} className="relative z-10 mx-auto max-w-7xl px-6 pb-24">
-        <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_1fr]">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-white/[0.08] bg-white/[0.02] px-3.5 py-1.5 text-[11px] backdrop-blur"
-            >
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-aqua opacity-75" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-aqua" />
-              </span>
-              <span className="font-mono uppercase tracking-[0.2em] text-muted-foreground">
-                Booking open · 60 min ETA
-              </span>
-            </motion.div>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 pb-24">
+        {/* Issue header — printed magazine masthead */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 flex items-end justify-between border-b border-white/[0.08] pb-5"
+        >
+          <div className="flex items-baseline gap-6">
+            <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground">
+              Vol. 04 — Issue №12
+            </span>
+            <span className="hidden font-mono text-[10px] uppercase tracking-[0.35em] text-muted-foreground md:inline">
+              The Detailing Quarterly
+            </span>
+          </div>
+          <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-gold">
+            Est. 2014 · India
+          </span>
+        </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="text-[3.25rem] font-medium leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-[5.25rem]"
-            >
-              The detail
-              <br />
-              your car has been
-              <br />
-              <span className="italic text-gradient-aqua">waiting for.</span>
-            </motion.h1>
-
+        <div className="grid items-start gap-12 lg:grid-cols-12">
+          {/* Left: editorial copy */}
+          <div className="lg:col-span-7">
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="mt-7 max-w-md text-[15px] leading-relaxed text-muted-foreground"
+              transition={{ delay: 0.15 }}
+              className="eyebrow mb-8"
             >
-              Touchless wash, ceramic coating, and concours-level interior detailing — performed
-              by certified technicians, delivered at your doorstep.
+              <span className="mr-3 inline-block h-px w-10 align-middle bg-gold/60" />
+              The Mobile Detailing Co.
             </motion.p>
 
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="mt-9 flex flex-wrap items-center gap-3"
+              transition={{ delay: 0.22, duration: 0.8 }}
+              className="font-display text-[3.5rem] font-normal leading-[0.95] tracking-[-0.02em] sm:text-7xl lg:text-[6.5rem]"
             >
-              <a
-                href="#book"
-                className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-[13px] font-semibold text-background transition-all hover:bg-aqua hover:text-primary-foreground hover:shadow-[0_0_40px_-5px_var(--aqua-glow)]"
-              >
-                Book a wash
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a
-                href="#packages"
-                className="rounded-full border border-white/[0.08] bg-white/[0.02] px-6 py-3 text-[13px] font-semibold text-foreground backdrop-blur transition-colors hover:bg-white/[0.06]"
-              >
-                View packages
-              </a>
-            </motion.div>
+              The quiet
+              <br />
+              craft of a<br />
+              <em className="not-italic">
+                <span className="italic text-gold">truly</span>
+              </em>{" "}
+              <em className="italic">clean</em> car.
+            </motion.h1>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-white/[0.06] pt-6"
+              transition={{ delay: 0.45 }}
+              className="mt-10 grid max-w-xl gap-6 sm:grid-cols-[1fr_auto] sm:items-end"
             >
-              <div>
-                <div className="font-display text-2xl font-medium tracking-tight">12K+</div>
-                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Cars detailed</div>
-              </div>
-              <div>
-                <div className="flex items-center gap-1">
-                  <span className="font-display text-2xl font-medium tracking-tight">4.9</span>
-                  <Star className="h-3.5 w-3.5 fill-aqua text-aqua" />
-                </div>
-                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Avg rating</div>
-              </div>
-              <div>
-                <div className="font-display text-2xl font-medium tracking-tight">45<span className="text-muted-foreground text-base">min</span></div>
-                <div className="mt-0.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Turnaround</div>
-              </div>
+              <p className="max-w-md text-[15px] leading-[1.75] text-muted-foreground">
+                Hand-finished detailing performed at your driveway by trained technicians.
+                Ceramic coating, paint correction, interior restoration — booked in
+                under sixty seconds, delivered with the patience of a workshop.
+              </p>
+              <a
+                href="#book"
+                className="group inline-flex items-center gap-3 self-start text-[13px] font-medium uppercase tracking-[0.2em] text-foreground transition-colors hover:text-gold"
+              >
+                Reserve a slot
+                <span className="grid h-9 w-9 place-items-center rounded-full border border-white/15 transition-all group-hover:border-gold group-hover:bg-gold group-hover:text-primary-foreground">
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </span>
+              </a>
             </motion.div>
 
+            {/* small stat row — print captions */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+              className="mt-16 grid max-w-xl grid-cols-3 gap-8 border-t border-white/[0.06] pt-7"
+            >
+              <Stat number="12,400" label="Cars finished" />
+              <Stat
+                number={
+                  <span className="inline-flex items-center gap-1.5">
+                    4.9
+                    <Star className="h-3.5 w-3.5 fill-gold text-gold" />
+                  </span>
+                }
+                label="Avg rating"
+              />
+              <Stat number="45 min" label="Avg turnaround" />
+            </motion.div>
           </div>
 
-          {/* 3D Hero image with mouse-tilt */}
+          {/* Right: editorial cover image */}
           <motion.div
-            style={{ y, scale }}
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
+            style={{ y }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className="perspective-1000 relative"
+            className="relative lg:col-span-5"
           >
-            <motion.div
-              style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-              className="animate-float-3d relative"
-            >
-              <div className="absolute -inset-6 rounded-3xl bg-gradient-aqua opacity-30 blur-3xl" />
-              <div className="relative overflow-hidden rounded-3xl border border-border glass-card">
-                <img
-                  src={heroCar}
-                  alt="Luxury car being washed with cinematic blue lighting"
-                  width={1600}
-                  height={1100}
-                  className="h-full w-full object-cover"
-                />
-                {/* shine sweep */}
-                <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                  <div className="animate-drift absolute inset-y-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                </div>
-              </div>
+            <div className="relative aspect-[3/4] overflow-hidden">
+              <img
+                src={heroCar}
+                alt="Black sports car at the moment of finish — water beading on freshly ceramic-coated paint"
+                width={900}
+                height={1200}
+                className="h-full w-full object-cover grayscale-[0.15]"
+              />
+              {/* warm vignette */}
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
 
-              {/* floating cards */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="glass-card absolute -left-4 top-10 rounded-2xl p-4 shadow-card"
-              >
-                <p className="text-xs text-muted-foreground">Eco wash</p>
-                <p className="text-lg font-bold">2L water only</p>
-              </motion.div>
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity }}
-                className="glass-card absolute -right-4 bottom-10 rounded-2xl p-4 shadow-card"
-              >
-                <p className="text-xs text-muted-foreground">Avg time</p>
-                <p className="text-lg font-bold text-gradient-aqua">45 min</p>
-              </motion.div>
-            </motion.div>
+              {/* corner ticks — like a contact sheet */}
+              <Tick className="left-3 top-3" />
+              <Tick className="right-3 top-3" />
+              <Tick className="left-3 bottom-3" />
+              <Tick className="right-3 bottom-3" />
+            </div>
+
+            {/* caption block */}
+            <div className="mt-4 flex items-start justify-between gap-6">
+              <p className="max-w-[14rem] text-[11px] leading-relaxed text-muted-foreground">
+                <span className="text-foreground">Plate №12</span> — A 9H ceramic coating
+                applied over the course of an afternoon. Photographed by the workshop.
+              </p>
+              <p className="whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
+                Now booking
+              </p>
+            </div>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
     </section>
+  );
+}
+
+function Stat({ number, label }: { number: React.ReactNode; label: string }) {
+  return (
+    <div>
+      <div className="font-display text-3xl font-normal tracking-tight">{number}</div>
+      <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+        {label}
+      </div>
+    </div>
+  );
+}
+
+function Tick({ className }: { className?: string }) {
+  return (
+    <div
+      className={`absolute h-3 w-3 ${className}`}
+      aria-hidden
+    >
+      <span className="absolute left-0 top-0 h-px w-3 bg-gold" />
+      <span className="absolute left-0 top-0 h-3 w-px bg-gold" />
+    </div>
   );
 }
