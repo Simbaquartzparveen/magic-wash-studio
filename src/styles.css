@@ -32,63 +32,67 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-aqua: var(--aqua);
-  --color-aqua-glow: var(--aqua-glow);
+  /* "aqua" token name preserved for backwards-compat, but mapped to gold */
+  --color-aqua: var(--gold);
+  --color-aqua-glow: var(--gold-glow);
+  --color-gold: var(--gold);
   --color-chrome: var(--chrome);
   --color-ink: var(--ink);
 
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Work Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --shadow-glow: 0 0 80px -15px var(--aqua-glow);
-  --shadow-card: 0 40px 100px -40px oklch(0 0 0 / 0.9);
-  --shadow-soft: 0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 20px 60px -30px oklch(0 0 0 / 0.6);
+  --shadow-glow: 0 0 60px -20px var(--gold-glow);
+  --shadow-card: 0 30px 80px -40px oklch(0 0 0 / 0.95);
+  --shadow-soft: 0 1px 0 0 oklch(1 0 0 / 0.03) inset, 0 20px 60px -30px oklch(0 0 0 / 0.7);
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 0.5rem;
 
-  /* Deeper, more refined ink-black with subtle blue undertone */
-  --background: oklch(0.11 0.015 240);
-  --foreground: oklch(0.97 0.005 220);
+  /* True ink-black with a warm undertone — feels expensive, not "AI dark" */
+  --background: oklch(0.08 0.003 60);
+  --foreground: oklch(0.96 0.005 75);
 
-  --ink: oklch(0.08 0.012 240);
+  --ink: oklch(0.05 0.002 60);
 
-  --card: oklch(0.15 0.018 240);
-  --card-foreground: oklch(0.97 0.005 220);
+  --card: oklch(0.12 0.004 60);
+  --card-foreground: oklch(0.96 0.005 75);
 
-  --popover: oklch(0.15 0.018 240);
-  --popover-foreground: oklch(0.97 0.005 220);
+  --popover: oklch(0.12 0.004 60);
+  --popover-foreground: oklch(0.96 0.005 75);
 
-  /* More refined cyan — slightly desaturated for premium feel */
-  --primary: oklch(0.78 0.15 215);
-  --primary-foreground: oklch(0.1 0.02 240);
+  /* Burnished gold — classic luxury automotive accent */
+  --primary: oklch(0.78 0.11 80);
+  --primary-foreground: oklch(0.1 0.003 60);
 
-  --secondary: oklch(0.2 0.022 240);
-  --secondary-foreground: oklch(0.97 0.005 220);
+  --secondary: oklch(0.16 0.004 60);
+  --secondary-foreground: oklch(0.96 0.005 75);
 
-  --muted: oklch(0.18 0.018 240);
-  --muted-foreground: oklch(0.62 0.015 230);
+  --muted: oklch(0.14 0.004 60);
+  --muted-foreground: oklch(0.58 0.01 75);
 
-  --accent: oklch(0.78 0.15 215);
-  --accent-foreground: oklch(0.1 0.02 240);
+  --accent: oklch(0.78 0.11 80);
+  --accent-foreground: oklch(0.1 0.003 60);
 
-  --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.98 0.01 220);
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 75);
 
-  --border: oklch(1 0 0 / 0.06);
-  --input: oklch(0.2 0.022 240);
-  --ring: oklch(0.78 0.15 215);
+  --border: oklch(1 0 0 / 0.07);
+  --input: oklch(0.16 0.004 60);
+  --ring: oklch(0.78 0.11 80);
 
-  --aqua: oklch(0.78 0.15 215);
-  --aqua-glow: oklch(0.78 0.2 215 / 0.35);
-  --chrome: oklch(0.94 0.008 220);
+  --gold: oklch(0.78 0.11 80);
+  --gold-soft: oklch(0.86 0.08 85);
+  --gold-glow: oklch(0.78 0.16 80 / 0.4);
+  --chrome: oklch(0.94 0.005 80);
 
-  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.28 0.09 220) 0%, oklch(0.11 0.015 240) 55%);
-  --gradient-aqua: linear-gradient(135deg, oklch(0.82 0.16 205) 0%, oklch(0.62 0.18 240) 100%);
-  --gradient-chrome: linear-gradient(135deg, oklch(0.96 0.008 220) 0%, oklch(0.72 0.015 230) 50%, oklch(0.96 0.008 220) 100%);
-  --gradient-ink: linear-gradient(180deg, oklch(0.11 0.015 240) 0%, oklch(0.08 0.012 240) 100%);
+  --gradient-hero: radial-gradient(ellipse 70% 50% at 70% 0%, oklch(0.18 0.025 75) 0%, oklch(0.08 0.003 60) 60%);
+  --gradient-aqua: linear-gradient(135deg, oklch(0.86 0.09 85) 0%, oklch(0.68 0.12 70) 100%);
+  --gradient-gold: linear-gradient(135deg, oklch(0.86 0.09 85) 0%, oklch(0.68 0.12 70) 100%);
+  --gradient-chrome: linear-gradient(135deg, oklch(0.96 0.005 80) 0%, oklch(0.7 0.01 75) 50%, oklch(0.96 0.005 80) 100%);
+  --gradient-ink: linear-gradient(180deg, oklch(0.08 0.003 60) 0%, oklch(0.05 0.002 60) 100%);
 }
 
 @layer base {
@@ -104,14 +108,21 @@
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.03em;
-    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-weight: 400;
   }
-  ::selection { background: var(--aqua); color: var(--primary-foreground); }
+  ::selection { background: var(--gold); color: var(--primary-foreground); }
 }
 
 @utility text-gradient-aqua {
-  background: var(--gradient-aqua);
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-gold {
+  background: var(--gradient-gold);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -129,7 +140,11 @@
 }
 
 @utility bg-gradient-aqua {
-  background: var(--gradient-aqua);
+  background: var(--gradient-gold);
+}
+
+@utility bg-gradient-gold {
+  background: var(--gradient-gold);
 }
 
 @utility bg-gradient-ink {
@@ -141,39 +156,36 @@
 }
 
 @utility glass-card {
-  background: linear-gradient(180deg, oklch(1 0 0 / 0.04), oklch(1 0 0 / 0.01));
-  backdrop-filter: blur(24px) saturate(140%);
-  border: 1px solid oklch(1 0 0 / 0.07);
+  background: linear-gradient(180deg, oklch(1 0 0 / 0.03), oklch(1 0 0 / 0.005));
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid oklch(1 0 0 / 0.06);
   box-shadow: var(--shadow-soft);
 }
 
 @utility glass-subtle {
-  background: oklch(0.16 0.02 240 / 0.5);
+  background: oklch(0.12 0.004 60 / 0.5);
   backdrop-filter: blur(16px);
   border: 1px solid oklch(1 0 0 / 0.05);
 }
 
 @utility eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--aqua);
+  color: var(--gold);
 }
 
-@utility grain-overlay {
-  position: relative;
+@utility rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.12), transparent);
 }
 
 @utility section-border {
-  border-top: 1px solid oklch(1 0 0 / 0.04);
+  border-top: 1px solid oklch(1 0 0 / 0.05);
 }
 
-@keyframes float-3d {
-  0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
-  50% { transform: translateY(-20px) rotateX(2deg) rotateY(-2deg); }
-}
 @keyframes drift {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(200%); }
@@ -182,29 +194,19 @@
   0% { transform: scale(0.8); opacity: 0.6; }
   100% { transform: scale(2.2); opacity: 0; }
 }
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 40px -5px var(--aqua-glow); }
-  50% { box-shadow: 0 0 100px 0px var(--aqua-glow); }
-}
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-.animate-float-3d { animation: float-3d 7s ease-in-out infinite; }
 .animate-drift { animation: drift 6s linear infinite; }
 .animate-ripple { animation: ripple 3s ease-out infinite; }
-.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
 .animate-marquee { animation: marquee 40s linear infinite; }
 
 .perspective-1000 { perspective: 1000px; }
 .preserve-3d { transform-style: preserve-3d; }
 
-/* Refined noise texture for premium feel */
+/* Subtle paper-grain noise for a printed-magazine feel */
 .noise {
   position: relative;
 }
@@ -213,7 +215,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.04;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
