@@ -11,6 +11,7 @@ import { Booking } from "@/components/site/Booking";
 import { FAQ } from "@/components/site/FAQ";
 import { Footer } from "@/components/site/Footer";
 import { AIAssistant } from "@/components/site/AIAssistant";
+import { ScrollProgress, CursorGlow, Marquee } from "@/components/site/MotionFX";
 
 const FAQS = [
   { q: "How long does a wash take?", a: "Express takes ~15 minutes. Premium ~45 minutes. Full Showroom detailing can take 3-5 hours depending on your car's condition." },
