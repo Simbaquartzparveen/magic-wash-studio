@@ -4,20 +4,20 @@ import { Check, Zap } from "lucide-react";
 const packages = [
   {
     name: "Express",
-    price: "299",
+    price: "39",
     desc: "Quick rinse, perfect for weekly upkeep.",
     features: ["Foam wash", "Tyre cleaning", "Quick dry", "Air freshener"],
   },
   {
     name: "Premium",
-    price: "899",
+    price: "99",
     desc: "Our most popular — inside out shine.",
     features: ["Everything in Express", "Interior vacuum", "Dashboard polish", "Glass cleaning", "Wheel detailing"],
     featured: true,
   },
   {
     name: "Showroom",
-    price: "2,499",
+    price: "249",
     desc: "Full detailing + ceramic coating.",
     features: ["Everything in Premium", "Paint correction", "9H ceramic coating", "Engine bay clean", "Leather treatment", "2yr warranty"],
   },
@@ -72,7 +72,7 @@ export function Packages() {
               <h3 className="text-2xl font-bold">{p.name}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
               <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-sm text-muted-foreground">₹</span>
+                <span className="text-sm text-muted-foreground">NZ$</span>
                 <span className={`text-5xl font-black ${p.featured ? "text-gradient-aqua" : ""}`}>
                   {p.price}
                 </span>
