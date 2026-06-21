@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight, Phone, Star } from "lucide-react";
 import heroCar from "@/assets/hero-car.jpg";
 
 export function Hero() {
