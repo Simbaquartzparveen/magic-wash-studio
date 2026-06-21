@@ -96,7 +96,7 @@ export function Contact() {
                   className="glass-card flex items-start gap-4 rounded-2xl p-5 transition-colors hover:bg-secondary/30"
                 >
                   <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-aqua">
-                    <Icon className="h-4.5 w-4.5 text-primary-foreground" />
+                    <Icon className="h-5 w-5 text-primary-foreground" />
                   </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
