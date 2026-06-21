@@ -80,11 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "AquaDrive — Premium Mobile Car Wash & Detailing" },
       { name: "description", content: "Eco-friendly mobile car wash and professional detailing delivered to your door. Book ceramic coating, interior & exterior detailing by trained pros." },
       { name: "author", content: "AquaDrive" },
-      { property: "og:title", content: "AquaDrive — Premium Mobile Car Wash" },
-      { property: "og:description", content: "Premium mobile car wash and detailing delivered to your door." },
+      { property: "og:title", content: "AquaDrive — Premium Mobile Car Wash & Detailing" },
+      { property: "og:description", content: "Eco-friendly mobile car wash and professional detailing delivered to your door. Book ceramic coating, interior & exterior detailing by trained pros." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "AquaDrive" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AquaDrive — Premium Mobile Car Wash & Detailing" },
+      { name: "twitter:description", content: "Eco-friendly mobile car wash and professional detailing delivered to your door. Book ceramic coating, interior & exterior detailing by trained pros." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab7c65ad-9874-4ae1-b600-4e790d8c32e8/id-preview-cf27173e--c73f283d-aca9-47d0-bc9e-2e5dd7782b24.lovable.app-1782012115533.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ab7c65ad-9874-4ae1-b600-4e790d8c32e8/id-preview-cf27173e--c73f283d-aca9-47d0-bc9e-2e5dd7782b24.lovable.app-1782012115533.png" },
     ],
     links: [
       {
