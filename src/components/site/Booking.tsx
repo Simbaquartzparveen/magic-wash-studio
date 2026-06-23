@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { CheckCircle2, Navigation, MapPin } from "lucide-react";
+import { Logo } from "./Logo";
 
 const MAPS_DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=Steam+Clean+Mobile+Car+Wash+Auckland+NZ";
@@ -66,9 +67,7 @@ export function Booking() {
             >
               {sent ? (
                 <div className="grid place-items-center py-10 text-center">
-                  <div className="grid h-16 w-16 place-items-center rounded-full bg-gradient-aqua glow-aqua">
-                    <CheckCircle2 className="h-8 w-8 text-primary-foreground" />
-                  </div>
+                  <Logo className="h-16 w-auto" />
                   <h4 className="mt-4 text-2xl font-bold">Booking confirmed!</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     We'll WhatsApp you the details in 60 seconds.

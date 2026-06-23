@@ -1,4 +1,5 @@
-import { Droplets, Camera, Globe, Send, Mail, Phone, MapPin, Navigation } from "lucide-react";
+import { Camera, Globe, Send, Mail, Phone, MapPin, Navigation } from "lucide-react";
+import { Logo } from "./Logo";
 
 const MAPS_DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=Steam+Clean+Mobile+Car+Wash+Auckland+NZ";
@@ -9,13 +10,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-10 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-aqua">
-                <Droplets className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="font-display text-xl font-bold tracking-wider">
-                STEAM<span className="text-gradient-aqua">CLEAN</span>
-              </span>
+            <div className="flex items-center">
+              <Logo className="h-10 w-auto" />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
               Premium mobile car wash & detailing. Showroom shine, delivered to your driveway.

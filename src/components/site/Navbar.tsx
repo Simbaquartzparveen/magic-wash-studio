@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import { Logo } from "./Logo";
 
 const links = [
   { href: "#services", label: "Services", num: "01" },
@@ -46,14 +47,9 @@ export function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-          {/* Logotype — wordmark only, no pill */}
-          <a href="#" className="group flex items-baseline gap-2">
-            <span className="font-display text-2xl leading-none tracking-tight">
-              Steam Clean<span className="text-gold">.</span>
-            </span>
-            <span className="hidden font-mono text-[9px] uppercase tracking-[0.28em] text-muted-foreground sm:inline">
-              / car care
-            </span>
+          {/* Logo */}
+          <a href="#" className="flex items-center">
+            <Logo className="h-8 w-auto" />
           </a>
 
           {/* Numbered nav — editorial table-of-contents feel */}
