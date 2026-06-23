@@ -26,9 +26,9 @@ const FAQS = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AquaDrive — Premium Mobile Car Wash & Detailing" },
+      { title: "Steam Clean — Premium Mobile Car Wash & Detailing" },
       { name: "description", content: "Showroom shine delivered to your driveway. Eco-friendly mobile car wash, ceramic coating, and full detailing by trained pros." },
-      { property: "og:title", content: "AquaDrive — Premium Mobile Car Wash" },
+      { property: "og:title", content: "Steam Clean — Premium Mobile Car Wash" },
       { property: "og:description", content: "Book a premium mobile car wash in under 60 seconds. Eco-friendly, doorstep, showroom finish." },
       { property: "og:url", content: "/" },
     ],
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          name: "AquaDrive",
+          name: "Steam Clean",
           description: "Premium mobile car wash and detailing service.",
           telephone: "+64 21 234 5678",
           areaServed: ["Auckland", "Wellington", "Christchurch"],

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { CheckCircle2, Navigation, MapPin } from "lucide-react";
 
 const MAPS_DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=Aquadrive+Mobile+Car+Wash+Auckland+NZ";
+  "https://www.google.com/maps/dir/?api=1&destination=Steam+Clean+Mobile+Car+Wash+Auckland+NZ";
 
 export function Booking() {
   const [sent, setSent] = useState(false);
