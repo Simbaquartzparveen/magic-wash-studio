@@ -1,7 +1,7 @@
 import { Droplets, Camera, Globe, Send, Mail, Phone, MapPin, Navigation } from "lucide-react";
 
 const MAPS_DIRECTIONS_URL =
-  "https://www.google.com/maps/dir/?api=1&destination=Aquadrive+Mobile+Car+Wash+Auckland+NZ";
+  "https://www.google.com/maps/dir/?api=1&destination=Steam+Clean+Mobile+Car+Wash+Auckland+NZ";
 
 export function Footer() {
   return (
@@ -14,7 +14,7 @@ export function Footer() {
                 <Droplets className="h-5 w-5 text-primary-foreground" />
               </div>
               <span className="font-display text-xl font-bold tracking-wider">
-                AQUA<span className="text-gradient-aqua">DRIVE</span>
+                STEAM<span className="text-gradient-aqua">CLEAN</span>
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
@@ -53,7 +53,7 @@ export function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-wider">Reach us</h4>
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2"><Phone className="h-4 w-4 text-aqua" /><a href="tel:+64212345678" className="transition-colors hover:text-foreground">+64 21 234 5678</a></li>
-              <li className="flex gap-2"><Mail className="h-4 w-4 text-aqua" /> hi@aquadrive.co.nz</li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 text-aqua" /> hi@steamclean.co.nz</li>
               <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0 text-aqua" /> 24 Customs Street West, Auckland CBD 1010</li>
               <li>
                 <a
@@ -70,7 +70,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} AquaDrive. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Steam Clean. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-foreground">Privacy</a>
             <a href="#" className="hover:text-foreground">Terms</a>

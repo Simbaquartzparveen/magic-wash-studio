@@ -22,8 +22,8 @@ const contactCards = [
   {
     icon: Mail,
     label: "Email",
-    value: "hi@aquadrive.co.nz",
-    href: "mailto:hi@aquadrive.co.nz",
+    value: "hi@steamclean.co.nz",
+    href: "mailto:hi@steamclean.co.nz",
   },
   {
     icon: Clock,
@@ -64,7 +64,7 @@ export function Contact() {
           >
             <div className="relative aspect-[4/3] w-full sm:aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[420px]">
               <iframe
-                title="AquaDrive Auckland Location"
+                title="Steam Clean Auckland Location"
                 src={MAPS_EMBED_URL}
                 className="absolute inset-0 h-full w-full border-0"
                 allowFullScreen

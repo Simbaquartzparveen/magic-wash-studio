@@ -49,10 +49,10 @@ export function Navbar() {
           {/* Logotype — wordmark only, no pill */}
           <a href="#" className="group flex items-baseline gap-2">
             <span className="font-display text-2xl leading-none tracking-tight">
-              Aquadrive<span className="text-gold">.</span>
+              Steam Clean<span className="text-gold">.</span>
             </span>
             <span className="hidden font-mono text-[9px] uppercase tracking-[0.28em] text-muted-foreground sm:inline">
-              / detail co.
+              / car care
             </span>
           </a>
 

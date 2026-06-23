@@ -18,7 +18,7 @@ export function AIAssistant() {
     {
       role: "assistant",
       content:
-        "Hey, I'm **Aqua AI** ✨ — your car care concierge. Ask me about packages, detailing tips, or which wash fits your ride.",
+        "Hey, I'm **Steam AI** ✨ — your car care concierge. Ask me about packages, detailing tips, or which wash fits your ride.",
     },
   ]);
   const [streaming, setStreaming] = useState(false);
@@ -105,13 +105,13 @@ export function AIAssistant() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: "spring" }}
         onClick={() => setOpen((v) => !v)}
-        aria-label="Open Aqua AI assistant"
+        aria-label="Open Steam AI assistant"
         className="fixed bottom-6 right-6 z-50 group"
       >
         <span className="absolute inset-0 rounded-full bg-primary/40 blur-xl animate-pulse" />
         <span className="relative flex items-center gap-2 rounded-full bg-gradient-to-br from-primary to-accent px-5 py-4 text-primary-foreground shadow-2xl shadow-primary/40 ring-1 ring-white/20 hover:scale-105 transition-transform">
           {open ? <X className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
-          {!open && <span className="text-sm font-semibold tracking-tight">Ask Aqua AI</span>}
+          {!open && <span className="text-sm font-semibold tracking-tight">Ask Steam AI</span>}
         </span>
       </motion.button>
 
@@ -134,7 +134,7 @@ export function AIAssistant() {
                   </div>
                 </div>
                 <div>
-                  <div className="font-semibold tracking-tight">Aqua AI</div>
+                  <div className="font-semibold tracking-tight">Steam AI</div>
                   <div className="text-xs text-muted-foreground flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Online · Powered by AI
