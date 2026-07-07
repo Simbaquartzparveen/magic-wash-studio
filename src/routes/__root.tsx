@@ -77,6 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "vqBgN_tRL6bjKXTOOPfZvLUDJsQ4uNHCi3ZIe_cUTg0" },
       { title: "Steam Clean — Premium Mobile Car Wash & Detailing" },
       { name: "description", content: "Eco-friendly mobile car wash and professional detailing delivered to your door. Book ceramic coating, interior & exterior detailing by trained pros." },
       { name: "author", content: "Steam Clean" },
