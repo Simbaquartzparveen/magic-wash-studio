@@ -103,28 +103,34 @@ export function Booking() {
 }
 
 function Field({ label, name, ...rest }: { label: string; name: string } & React.InputHTMLAttributes<HTMLInputElement>) {
+  const id = `field-${name}`;
   return (
-    <label className="block">
-      <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</span>
+    <div className="block">
+      <label htmlFor={id} className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</label>
       <input
+        id={id}
         name={name}
+        aria-label={label}
         {...rest}
         className="w-full rounded-xl border border-border bg-input px-4 py-3 text-sm outline-none transition-colors focus:border-aqua"
       />
-    </label>
+    </div>
   );
 }
 
 function Select({ label, name, options }: { label: string; name: string; options: string[] }) {
+  const id = `field-${name}`;
   return (
-    <label className="block">
-      <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</span>
+    <div className="block">
+      <label htmlFor={id} className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</label>
       <select
+        id={id}
         name={name}
+        aria-label={label}
         className="w-full rounded-xl border border-border bg-input px-4 py-3 text-sm outline-none transition-colors focus:border-aqua"
       >
         {options.map((o) => <option key={o}>{o}</option>)}
       </select>
-    </label>
+    </div>
   );
 }
