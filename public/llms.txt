@@ -1,7 +1,17 @@
 # Steam Clean
 
-> Premium mobile car wash and detailing delivered to your door. Eco-friendly wash, ceramic coating, interior & exterior detailing by trained pros.
+> Premium mobile car wash and detailing in Auckland, Wellington & Christchurch. Eco-friendly steam wash, ceramic coating, interior & exterior detailing at your home or office — book in 60 seconds.
+
+## Services
+- Mobile car wash at home or office
+- Interior deep cleaning & shampoo
+- Exterior polish & paint correction
+- 9H ceramic coating (2-year warranty)
+- Steam wash — under 2 litres of water per car
+
+## Areas served
+Auckland, Wellington, Christchurch (New Zealand)
 
 ## Pages
-
-- [Home](/): Services, packages, booking, gallery and FAQ for Steam Clean mobile car wash.
+- [Home](/): Services, packages, booking, gallery and FAQ.
+- [Pricing Guide](/pricing-guide): What car detailing costs in NZ and what's included in each package.
